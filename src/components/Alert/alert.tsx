@@ -13,18 +13,21 @@ interface BaseAlertProps {
   description?: string;
   className?: string;
   alertType?: AlertType;
-  style?: React.CSSProperties;
   closable?: boolean;
 }
 
-const Alert: React.FC<BaseAlertProps> = (props) => {
+type NativeBaseProps = React.HTMLAttributes<HTMLElement>;
+
+export type AlertProps = BaseAlertProps & Partial<NativeBaseProps>
+
+const Alert: React.FC<AlertProps> = (props) => {
   const {
     message,
     description,
     className,
     alertType,
-    style,
-    closable
+    closable,
+    ...restProps
   } = props
 
   const classes = classNames('alert', className, {
@@ -33,21 +36,20 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
     'alert-closable': closable
   })
 
-  const [show, setShow] = useState(true);
-
-  const alertStyle: React.CSSProperties = {
-    ...style,
-    display: show ? 'block' : 'none'
-  }
+  const [alertShow, setAlertShow] = useState(true);
 
   const handleClose = () => {
-    setShow(false);
+    setAlertShow(false);
+  }
+
+  if (!alertShow) {
+    return null
   }
 
   return (
     <div
       className={classes}
-      style={alertStyle}
+      {...restProps}
     >
       <span className="alert-message">{message}</span>
       <span className="alert-description">{description}</span>
