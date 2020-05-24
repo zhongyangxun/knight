@@ -86,7 +86,7 @@ describe('test Menu and MenuItem component', () => {
     expect(testProps.onSelect).not.toHaveBeenCalledWith('1')
   })
 
-  it('should render vertical mode when mode it set to vertical', () => {
+  it('should render vertical mode when mode is set to vertical', () => {
     cleanup()
     const wrapper = render(generateMenu(testVerticalProps))
     const menuElement = wrapper.getByTestId('test-menu')
