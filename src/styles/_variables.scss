@@ -311,3 +311,21 @@ $alert-message-font-size-lg:        $font-size-base !default;
 
 // alert description
 $alert-description-font-size:       $font-size-sm !default;
+
+
+// tabs
+$tabs-border-width:                 $border-width !default;
+$tabs-border-color:                 $border-color !default;
+$tab-transition:                    color .3s ease-in-out, border-color .3s ease-in-out !default;
+
+// tabs-bar
+$tabs-bar-margin-bottom:            $spacer !default;
+
+// tab-nav
+$tab-nav-padding-y:                 .5rem !default;
+$tab-nav-padding-x:                 1rem !default;
+$tab-nav-border-radius:             $border-radius;
+$tab-nav-active-color:              $primary !default;
+$tab-nav-active-border-width:       2 * $border-width !default;
+$tab-nav-active-font-weight:        $font-weight-bold !default;
+$tab-nav-disabled-color:            $gray-600 !default;

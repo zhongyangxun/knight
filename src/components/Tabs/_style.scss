@@ -1,0 +1,74 @@
+.knight-tabs {
+  .tabs-bar {
+    border-bottom: solid $tabs-border-width $tabs-border-color;
+    margin-bottom: $tabs-bar-margin-bottom;
+
+    .tab-nav-container {
+      display: flex;
+      margin-bottom: -$tabs-border-width;
+
+      .tab-nav {
+        padding: $tab-nav-padding-y $tab-nav-padding-x;
+        cursor: pointer;
+        transition: $tab-transition;
+
+        &.is-active {
+          font-weight: $tab-nav-active-font-weight;
+        }
+
+        &.is-active,
+        &:hover {
+          color: $tab-nav-active-color;
+        }
+
+        &.is-disabled {
+          color: $tab-nav-disabled-color;
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .tabs-content {
+    .tab-item {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+  }
+
+  &.tabs-line {
+    .tabs-bar {
+      .tab-nav-container {
+        .tab-nav {
+          &.is-active,
+          &:hover {
+            border-bottom: solid $tab-nav-active-color $tabs-border-width;
+          }
+
+          &.is-active {
+            border-bottom-width: $tab-nav-active-border-width;
+          }
+        }
+      }
+    }
+  }
+
+  &.tabs-card {
+    .tabs-bar {
+      .tab-nav-container {
+        .tab-nav {
+          border-radius: $tab-nav-border-radius $tab-nav-border-radius 0 0;
+
+          &.is-active {
+            border: solid $tabs-border-color $tabs-border-width;
+            border-bottom: solid $white $tabs-border-width;
+          }
+        }
+      }
+    }
+  }
+}
