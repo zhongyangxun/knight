@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
+import Icon from '../Icon/icon'
+import Transition from '../Transition/transition'
 
-export enum AlertType {
-  Success = 'success',
-  Default = 'default',
-  Danger = 'danger',
-  Warning = 'warning'
-}
+export type AlertType = 'success' | 'default' | 'danger' | 'warning'
 
 interface BaseAlertProps {
   message: string;
@@ -14,6 +11,7 @@ interface BaseAlertProps {
   className?: string;
   alertType?: AlertType;
   closable?: boolean;
+  onClose?: () => void
 }
 
 type NativeBaseProps = React.HTMLAttributes<HTMLElement>;
@@ -42,31 +40,43 @@ const Alert: React.FC<AlertProps> = (props) => {
     setAlertShow(false);
   }
 
-  if (!alertShow) {
-    return null
+  const AlertBody = () => {
+    return (
+      <div
+        className={classes}
+        {...restProps}
+      >
+        <span className="alert-message">{message}</span>
+        <span className="alert-description">{description}</span>
+        {
+          closable
+            ? (
+              <button className="alert-close-icon" onClick={() => handleClose()} >
+                <Icon icon="times" theme="light" size="lg" />
+              </button>
+            )
+            : null
+        }
+      </div>
+    )
   }
 
   return (
-    <div
-      className={classes}
-      {...restProps}
-    >
-      <span className="alert-message">{message}</span>
-      <span className="alert-description">{description}</span>
-      {
-        closable
-          ? (
-            <button className="alert-close-icon" onClick={() => handleClose()} >关闭</button>
-          )
-          : null
-      }
-    </div>
+   <Transition
+      timeout={300}
+      animation="zoom-in-top"
+      in={alertShow}
+      wrapper
+   >
+     <AlertBody />
+   </Transition>
   )
 }
 
 Alert.defaultProps = {
-  alertType: AlertType.Default,
+  alertType: 'default',
   closable: false
 }
+
 
 export default Alert

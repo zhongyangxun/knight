@@ -303,11 +303,11 @@ $alert-close-icon-font-size:        $font-size-base * .75 !default;
 $alert-close-icon-top:              .5rem !default;
 $alert-close-icon-right:            $alert-close-icon-top !default;
 $alert-close-icon-border:           0 !default;
+$alert-close-icon-outline:           0 !default;
 $alert-close-icon-padding:          $alert-close-icon-font-size * .5 !default;
 
 // alert message
-$alert-message-font-size:           $font-size-sm !default;
-$alert-message-font-size-lg:        $font-size-base !default;
+$alert-message-font-size:           $font-size-base !default;
 
 // alert description
 $alert-description-font-size:       $font-size-sm !default;

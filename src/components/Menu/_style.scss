@@ -32,17 +32,40 @@
 
   .submenu-item {
     position: relative;
+
+    .submenu-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow-icon {
+      margin-left: 3px;
+      transition: transform .25s ease-in-out;
+    }
+
+    &:hover {
+      .arrow-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.is-vertical {
+      .arrow-icon {
+        transform: rotate(0deg);
+      }
+
+      &.is-opened {
+       .arrow-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
   }
 
   .knight-submenu {
-    display: none;
     list-style: none;
     padding-left: 0;
     white-space: nowrap;
-
-    &.menu-opened {
-      display: block;
-    }
 
     .menu-item {
       padding: $menu-item-padding-y $menu-item-padding-x;

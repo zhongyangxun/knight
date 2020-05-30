@@ -15,6 +15,10 @@
     right: $alert-close-icon-right;
     border: $alert-close-icon-border;
     padding: $alert-close-icon-padding;
+
+    &:focus {
+      outline: $alert-close-icon-outline;
+    }
   }
 
   &.alert-closable {
@@ -24,7 +28,6 @@
   &.alert-with-description {
     .alert-message {
       display: block;
-      font-size: $alert-message-font-size-lg;
     }
 
     .alert-description {

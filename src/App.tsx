@@ -1,41 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
-import Tabs from './components/Tabs/tabs'
-import TabItem from './components/Tabs/tabItem'
+import Transition from './components/Transition/transition'
+import Button from './components/Button/button'
+import Alert from './components/Alert/alert'
 
-const testLabel = <i>33333</i>
-
-function App() {
+library.add(fas)
+const App: React.FC = () => {
+  const [show, setShow] = useState(false)
   return (
-    <div className="App" style={{margin: '50px'}}>
-      <header className="App-header">
-        <Menu defaultIndex="0" onSelect={(index) => { console.log(index) }} defaultOpenSubMenus={['2']}>
+    <div className="App">
+      <header className="App-header" style={{margin: '100px'}}>
+        <Menu defaultIndex='0' onSelect={(index) => { alert(index) }}>
           <MenuItem>
             cool link
           </MenuItem>
           <MenuItem disabled>
-            cool link2
+            cool link 2
           </MenuItem>
           <SubMenu title="dropdown">
             <MenuItem>
-              cool link3
+              dropdown 1
             </MenuItem>
             <MenuItem>
-              cool link4
+              dropdown 2
             </MenuItem>
           </SubMenu>
           <MenuItem>
-            hhhh
+            cool link 3
           </MenuItem>
         </Menu>
-
-        <Tabs className="clazz" type="card" onSelect={(index) => {console.log(index)}} >
-          <TabItem label="11111">11111的内容</TabItem>
-          <TabItem label="22222">22222的内容</TabItem>
-          <TabItem  label={testLabel}>33333的内容</TabItem>
-        </Tabs>
+        <Button size="lg" onClick={() => { setShow(!show) }} > Toggle </Button>
+        <Transition
+          in={show}
+          timeout={300}
+          animation="zoom-in-left"
+        >
+          <div>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          </div>
+        </Transition>
+        <Transition
+          in={show}
+          timeout={300}
+          animation="zoom-in-top"
+          wrapper
+        >
+          <Button btnType="primary" size="lg">A Large Button </Button>
+        </Transition>
+        <Alert message="do you like your life" closable />
+        <Alert message="do you like your life" closable alertType="success" />
+        <Alert message="do you like your life" closable alertType="danger" />
       </header>
     </div>
   );
