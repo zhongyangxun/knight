@@ -3,6 +3,11 @@
   border-radius: $alert-border-radius;
   position: relative;
   transition: $alert-transition;
+  margin-bottom: $alert-margin-bottom;
+
+  .bold-title {
+    font-weight: $alert-bold-title-font-weight;
+  }
 
   .alert-message {
     font-size: $alert-message-font-size;

@@ -294,6 +294,8 @@ $alert-padding-y:                   1rem !default;
 $alert-padding-x:                   $alert-padding-y !default;
 $alert-border-radius:               $border-radius !default;
 $alert-transition:                  height 4s ease-in-out;
+$alert-margin-bottom:               $spacer !default;
+$alert-bold-title-font-weight:      $font-weight-bold !default;
 
 // 可关闭 alert
 $alert-closable-padding-right:      3rem !default;

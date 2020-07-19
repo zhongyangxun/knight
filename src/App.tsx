@@ -65,7 +65,7 @@ const App: React.FC = () => {
         >
           <Button btnType="primary" size="lg">A Large Button </Button>
         </Transition>
-        <Alert message="do you like your life" closable />
+        <Alert message="do you like your life" closable onClose={() => { console.log('xxx') }} />
         <Alert message="do you like your life" closable alertType="success" />
         <Alert message="do you like your life" closable alertType="danger" />
       </header>
