@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, FC } from 'react'
 import classNames from 'classnames'
 import { TabItemProps } from './tabItem'
 import TabNav from './tabNav'
@@ -8,9 +8,12 @@ type SelectCallback = (selectedIndex: string) => void
 export type TabsType = 'line' | 'card'
 
 export interface TabsProps {
+  /** 默认选中的选项卡索引 */
   defaultIndex?: string;
+  /** 选中选项卡的回调函数 */
   onSelect?: SelectCallback;
   className?: string;
+  /** 选项卡的样式类型 */
   type?: TabsType
 }
 
@@ -23,7 +26,15 @@ export const TabsContext = createContext<ITabsContext>({
   index: '0'
 })
 
-const Tabs: React.FC<TabsProps> = (props) => {
+/**
+ * 选项卡组件
+ * ## 引入方式
+ * ~~~JS
+ * import { Tabs, TabItem } from 'knight'
+ * ~~~
+ */
+
+export const Tabs: FC<TabsProps> = (props) => {
   const {
     defaultIndex,
     onSelect,
