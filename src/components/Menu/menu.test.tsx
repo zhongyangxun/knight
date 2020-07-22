@@ -2,7 +2,7 @@ import React from 'react'
 import { render, RenderResult, fireEvent, cleanup, wait } from '@testing-library/react'
 import Menu, { MenuProps } from './menu'
 import MenuItem from './menuItem'
-import SubMenu from './subMenu'
+import Submenu from './subMenu'
 
 const testProps: MenuProps = {
   defaultIndex: '0',
@@ -13,7 +13,7 @@ const testProps: MenuProps = {
 const testVerticalProps: MenuProps = {
   defaultIndex: '0',
   mode: 'vertical',
-  defaultOpenSubMenus: ['3']
+  defaultOpenSubmenus: ['3']
 }
 
 const generateMenu = (props: MenuProps) => {
@@ -28,11 +28,11 @@ const generateMenu = (props: MenuProps) => {
       <MenuItem>
         xyz
       </MenuItem>
-      <SubMenu title="dropdown">
+      <Submenu title="dropdown">
         <MenuItem>
           drop1
         </MenuItem>
-      </SubMenu>
+      </Submenu>
     </Menu>
   )
 }
@@ -108,7 +108,7 @@ describe('test Menu and MenuItem component', () => {
     })
   })
 
-  it('vertical menu should show subMenus specificed in defaultOpenSubMenus', () => {
+  it('vertical menu should show subMenus specificed in defaultOpenSubmenus', () => {
     cleanup()
     const wrapper = render(generateMenu(testVerticalProps))
     expect(wrapper.queryByText('drop1')).toBeVisible()

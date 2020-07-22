@@ -1,26 +1,28 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, FC } from 'react'
 import classNames from 'classnames'
 import { MenuContext } from './menu'
 import { MenuItemProps } from './menuItem'
 import Icon from '../Icon/icon'
 import Transition from '../Transition/transition'
 
-export interface SubMenuProps {
+export interface SubmenuProps {
+  /** 子菜单的索引 */
   index?: string;
+  /** 子菜单的标题 */
   title: string;
   className?: string;
 }
 
-const SubMenu: React.FC<SubMenuProps> = ({
+export const Submenu: FC<SubmenuProps> = ({
   index,
   title,
   children,
   className
 }) => {
   const context = useContext(MenuContext)
-  const openedSubMenus = context.defaultOpenSubMenus as Array<string>
+  const openedSubmenus = context.defaultOpenSubmenus as Array<string>
   const isOpened = (index && context.mode === 'vertical')
-    ? openedSubMenus.includes(index)
+    ? openedSubmenus.includes(index)
     : false
   const [menuOpen, setOpen] = useState(isOpened)
 
@@ -66,7 +68,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
           index: `${index}-${i}`
         })
       } else {
-        console.error('Warning: SubMenu has a child which is not a MenuItem component')
+        console.error('Warning: Submenu has a child which is not a MenuItem component')
       }
     })
 
@@ -94,6 +96,6 @@ const SubMenu: React.FC<SubMenuProps> = ({
   )
 }
 
-SubMenu.displayName = 'SubMenu'
+Submenu.displayName = 'Submenu'
 
-export default SubMenu
+export default Submenu

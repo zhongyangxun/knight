@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
-import SubMenu from './components/Menu/subMenu'
+import Submenu from './components/Menu/subMenu'
 import Transition from './components/Transition/transition'
 import Button from './components/Button/button'
 import Alert from './components/Alert/alert'
@@ -21,14 +21,14 @@ const App: React.FC = () => {
           <MenuItem disabled>
             cool link 2
           </MenuItem>
-          <SubMenu title="dropdown">
+          <Submenu title="dropdown">
             <MenuItem>
               dropdown 1
             </MenuItem>
             <MenuItem>
               dropdown 2
             </MenuItem>
-          </SubMenu>
+          </Submenu>
           <MenuItem>
             cool link 3
           </MenuItem>
