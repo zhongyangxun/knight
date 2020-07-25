@@ -62,13 +62,18 @@ export const Alert: FC<AlertProps> = (props) => {
       <div
         className={classes}
         {...restProps}
+        data-testid="test-alert"
       >
         <span className={messageClasses}>{message}</span>
         <span className="alert-description">{description}</span>
         {
           closable
             ? (
-              <button className="alert-close-icon" onClick={() => handleClose()} >
+              <button
+                className="alert-close-icon"
+                onClick={() => handleClose()}
+                data-testid="alert-close-icon"
+              >
                 <Icon icon="times" theme="light" size="lg" />
               </button>
             )

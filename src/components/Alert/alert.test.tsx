@@ -5,7 +5,7 @@ import Alert, { AlertProps } from './alert'
 const testProps: AlertProps = {
   message: 'Nice',
   description: 'desc',
-  alertType: 'default',
+  alertType: 'success',
   className: 'klass'
 }
 
@@ -15,9 +15,9 @@ const closableProps: AlertProps = {
 }
 
 describe('test alert component', () => {
-  it('should render the correct button', () => {
+  it('should render the correct alert', () => {
     const wrapper = render(<Alert message="Nice" />)
-    const element = wrapper.container.firstChild as HTMLElement;
+    const element = wrapper.getByTestId('test-alert')
     expect(element).toBeInTheDocument()
     expect(element.tagName).toEqual('DIV')
     expect(element).toHaveClass('alert alert-default')
@@ -28,9 +28,9 @@ describe('test alert component', () => {
     expect(messageElement).toHaveClass('alert-message')
   })
 
-  it('should render the correct component based on different', () => {
+  it('should render the correct component based on different props', () => {
     const wrapper = render(<Alert  {...testProps} />)
-    const element = wrapper.container.firstChild as HTMLElement
+    const element = wrapper.getByTestId('test-alert')
     expect(element).toBeInTheDocument()
     expect(element).toHaveClass('alert alert-success klass')
 
@@ -41,11 +41,11 @@ describe('test alert component', () => {
 
   it('should render the closable Alert when closable set to true', () => {
     const wrapper = render(<Alert {...closableProps} />)
-    const element = wrapper.container.firstChild as HTMLElement
+    const element = wrapper.getByTestId('test-alert')
     expect(element).toBeInTheDocument()
     expect(element).toHaveClass('alert-closable')
 
-    const closeIconElement = wrapper.getByText('关闭')
+    const closeIconElement = wrapper.getByTestId('alert-close-icon')
     expect(closeIconElement).toBeInTheDocument()
     expect(closeIconElement).toHaveClass('alert-close-icon')
     fireEvent.click(closeIconElement)

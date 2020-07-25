@@ -10,7 +10,8 @@ export type ThemeProps =
   'info' |
   'warning' |
   'danger' |
-  'light'
+  'light' |
+  'dark'
 
 export interface IconProps extends FontAwesomeIconProps {
   /** 指定的图标 */
