@@ -8,7 +8,8 @@ import './fix_info_style.scss'
 
 library.add(fas)
 const wrapperStyle: React.CSSProperties = {
-  padding: '20px 40px'
+  padding: '20px 40px',
+  width: '500px'
 }
 
 const storyWrapper = (storyFn: any) => (

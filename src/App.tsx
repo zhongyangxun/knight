@@ -7,6 +7,7 @@ import Submenu from './components/Menu/subMenu'
 import Transition from './components/Transition/transition'
 import Button from './components/Button/button'
 import Alert from './components/Alert/alert'
+import Input from './components/Input/input'
 
 library.add(fas)
 const App: React.FC = () => {
@@ -14,6 +15,26 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header" style={{margin: '100px'}}>
+        <div>
+          <Input placeholder="input" />
+        </div>
+        <div>
+          <Input size="sm" placeholder="small size" icon="search" />
+        </div>
+        <div>
+          <Input size="lg" placeholder="large size" icon="search" />
+        </div>
+        <div>
+          <Input  disabled/>
+        </div>
+        <div>
+          <Input prepend="https" />
+          <Input append=".com" />
+          <Input append=".com" prepend="https" icon="search-dollar" />
+        </div>
+        <div>
+          <Input icon="search" />
+        </div>
         <Menu defaultIndex='0' onSelect={(index) => { alert(index) }}>
           <MenuItem>
             cool link

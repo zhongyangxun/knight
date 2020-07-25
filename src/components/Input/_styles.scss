@@ -1,0 +1,125 @@
+.knight-input-wrapper {
+  display: flex;
+  margin-bottom: $input-wraaper-margin-bottom;
+  font-family: $input-font-family;
+  line-height: $input-line-height;
+  font-weight: $input-font-weight;
+  color: $input-color;
+
+  .knight-input {
+    background-color: $input-bg;
+    border: $input-border-color $input-border-width solid;
+    transition: $input-transition;
+    outline-width: $input-outline-width;
+    width: 100%;
+
+    &:focus {
+      border-color: $input-focus-border-color;
+      color: $input-focus-color;
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+
+  .knight-input,
+  .prepend,
+  .append {
+    @include input-size($input-padding-y, $input-padding-x, $input-font-size, $input-border-radius);
+  }
+
+  &.input-size-lg {
+    .knight-input,
+    .prepend,
+    .append {
+      @include input-size($input-padding-y-lg, $input-padding-x-lg, $input-font-size-lg, $input-border-radius-lg);
+    }
+  }
+
+  &.input-size-sm {
+    .knight-input,
+    .prepend,
+    .append {
+      @include input-size($input-padding-y-sm, $input-padding-x-sm, $input-font-size-sm, $input-border-radius-sm);
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+
+    .knight-input {
+      background-color: $input-disabled-bg;
+      border-color: $input-disabled-border-color;
+    }
+  }
+
+
+  &.has-icon {
+    position: relative;
+
+    .knight-input {
+      padding-right: $input-icon-wrapper-width;
+    }
+    .icon-wrapper {
+      width: $input-icon-wrapper-width;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.input-size-lg {
+      .knight-input {
+        padding-right: $input-icon-wrapper-width-lg;
+      }
+
+      .icon-wrapper {
+        width: $input-icon-wrapper-width-lg;
+      }
+    }
+
+    &.input-size-sm {
+      .knight-input {
+        padding-right: $input-icon-wrapper-width-sm;
+      }
+
+      .icon-wrapper {
+        width: $input-icon-wrapper-width-sm;
+      }
+    }
+  }
+
+  &.has-prepend {
+    .knight-input {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &.has-append {
+    .knight-input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .prepend,
+  .append {
+    background-color: $input-prepend-apppend-bg;
+    border: $input-border-color $input-border-width solid;
+  }
+
+  .prepend {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .append {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

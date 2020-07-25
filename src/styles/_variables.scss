@@ -253,6 +253,7 @@ $input-disabled-border-color:           null !default;
 
 $input-color:                           $gray-700 !default;
 $input-border-color:                    $gray-400 !default;
+$input-outline-width:                   0 !default;
 $input-border-width:                    $border-width !default;
 $input-box-shadow:                      $box-shadow-inset !default;
 
@@ -278,6 +279,13 @@ $input-transition:                      border-color .3s ease-in-out, box-shadow
 $input-group-addon-color:               $input-color !default;
 $input-group-addon-bg:                  $gray-200 !default;
 $input-group-addon-border-color:        $input-border-color !default;
+
+$input-icon-wrapper-width:              2 * $input-font-size !default;
+$input-icon-wrapper-width-sm:           2 * $input-font-size-sm !default;
+$input-icon-wrapper-width-lg:           2 * $input-font-size-lg !default;
+
+$input-wraaper-margin-bottom:           $spacer !default;
+$input-prepend-apppend-bg:              $gray-300 !default;
 
 // Progress bars
 
