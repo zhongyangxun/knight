@@ -33,7 +33,6 @@ export const Input: FC<InputProps> = (props) => {
     icon,
     prepend,
     append,
-    value,
     ...restProps
   } = props
 
@@ -49,8 +48,16 @@ export const Input: FC<InputProps> = (props) => {
     [`input-size-${size}`]: size,
   })
 
-  if (value) {
+  const fixControlledValue = (value: any) => {
+    if (value === undefined || value === null) {
+      return ''
+    }
+    return value
+  }
+
+  if ('value' in restProps) {
     delete restProps.defaultValue
+    restProps.value = fixControlledValue(props.value)
   }
 
   return (
