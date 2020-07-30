@@ -339,3 +339,16 @@ $tab-nav-active-color:              $primary !default;
 $tab-nav-active-border-width:       2 * $border-width !default;
 $tab-nav-active-font-weight:        $font-weight-bold !default;
 $tab-nav-disabled-color:            $gray-600 !default;
+
+
+// auto-complete
+// sugeestion
+$ac-list-bg:                        $white !default;
+$ac-list-margin-bottom:             $spacer !default;
+$ac-list-border-width:              $border-width !default;
+$ac-list-padding-x:                 0 !default;
+$ac-list-border-color:              $border-color !default;
+$ac-list-loading-margin-y:          1rem !default;
+$ac-list-loading-margin-x:          auto !default;
+$ac-item-padding-y:                 .5rem !default;
+$ac-item-padding-x:                 1rem !default;

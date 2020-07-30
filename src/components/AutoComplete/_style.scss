@@ -1,0 +1,38 @@
+.knight-auto-complete {
+  position: relative;
+
+  .knight-suggestion-list {
+    margin-bottom: $ac-list-margin-bottom;
+    border: $ac-list-border-width $ac-list-border-color solid;
+    padding-left: $ac-list-padding-x;
+    background-color: $ac-list-bg;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px);
+    z-index: 100;
+
+    .knight-suggestion-loading {
+      display: block;
+      margin: $ac-list-loading-margin-y $ac-list-loading-margin-x;
+    }
+
+    .suggestion-item {
+      padding: $ac-item-padding-y $ac-item-padding-x;
+      list-style: none;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.is-active {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}
