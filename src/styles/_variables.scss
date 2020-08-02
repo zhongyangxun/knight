@@ -250,7 +250,6 @@ $input-font-size-lg:                    $btn-font-size-lg !default;
 $input-bg:                              $white !default;
 $input-disabled-bg:                     $gray-200 !default;
 $input-disabled-border-color:           null !default;
-
 $input-color:                           $gray-700 !default;
 $input-border-color:                    $gray-400 !default;
 $input-outline-width:                   0 !default;
@@ -352,3 +351,34 @@ $ac-list-loading-margin-y:          1rem !default;
 $ac-list-loading-margin-x:          auto !default;
 $ac-item-padding-y:                 .5rem !default;
 $ac-item-padding-x:                 1rem !default;
+
+
+// select
+// options list and option
+$select-op-list-max-height:          20rem !default;
+$select-op-list-border-width:        $border-width !default;
+$select-op-list-border-color:        $border-color !default;
+$select-op-list-padding-x:           0 !default;
+$select-option-padding-y:            .5rem !default;
+$select-option-padding-x:            1rem !default;
+$select-option-active-bg:            rgba($primary, .1) !default;
+$select-option-hover-bg:             $gray-200 !default;
+$select-option-disabled-color:       $gray-500 !default;
+// multiple selector
+$select-multiple-border-color:        $border-color !default;
+$select-multiple-border-width:       $border-width !default;
+$select-multiple-border-radius:      $border-radius !default;
+$select-multiple-padding-y:          0 !default;
+$select-multiple-padding-x:          .5rem !default;
+$select-multiple-content-height:     $line-height-base !default;
+$select-multiple-focus-border-color: $input-focus-border-color !default;
+$select-multiple-search-margin-y:    3px !default;
+$select-multiple-search-font-size:  $font-size-sm !default;
+
+// tag
+$tag-padding-y:                      .25rem !default;
+$tag-padding-x:                      .5rem !default;
+$tag-margin-x:                       .5rem !default;
+$tag-icon-padding-y:                 0 !default;
+$tag-icon-padding-x:                 .25rem !default;
+$tag-font-size:                      $font-size-sm !default;

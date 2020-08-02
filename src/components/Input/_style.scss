@@ -43,7 +43,10 @@
   }
 
   &.is-disabled {
-    cursor: not-allowed;
+    &,
+    .knight-input {
+      cursor: not-allowed;
+    }
 
     .knight-input {
       background-color: $input-disabled-bg;

@@ -88,3 +88,23 @@
   padding: $padding-y $padding-x;
   font-size: $font-size;
 }
+
+// tag
+@mixin tag-style(
+  $background,
+  $border,
+  $color,
+  $hover-background: lighten($background, 7.5%),
+  $hover-border: $border,
+  $hover-color: $color
+) {
+  color: $color;
+  background: $background;
+  border-color: $border;
+
+  &:hover {
+    color: $hover-color;
+    background: $hover-background;
+    border-color: $hover-border;
+  }
+}

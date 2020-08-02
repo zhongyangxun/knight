@@ -1,0 +1,96 @@
+.knight-select {
+  position: relative;
+
+  .knight-select-input {
+    &,
+    input {
+      cursor: pointer;
+    }
+  }
+
+  .knight-input-wrapper {
+    .icon-wrapper {
+      transition: transform .25s ease-in-out;
+      transform: rotate(0deg);
+    }
+  }
+
+  &.is-option-open {
+    .knight-input-wrapper {
+      .icon-wrapper {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+
+    .knight-select-input {
+      pointer-events: none;
+    }
+  }
+
+  .knight-option-list {
+    padding-left: $select-op-list-padding-x;
+    border: $select-op-list-border-width $select-op-list-border-color solid;
+    background-color: $white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px);
+    z-index: 100;
+    max-height: $select-op-list-max-height;
+    overflow: auto;
+
+    .knight-option-item {
+      list-style: none;
+      padding: $select-option-padding-y $select-option-padding-x;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+
+      &:hover {
+        background-color: $select-option-hover-bg;
+      }
+
+      &.is-disabled {
+        color: $select-option-disabled-color;
+        pointer-events: none;
+      }
+
+      &.is-selected {
+        background-color: $select-option-active-bg;
+      }
+    }
+  }
+
+  .knight-multiple-selector {
+    padding: $select-multiple-padding-y $select-multiple-padding-x;
+    border: solid $select-multiple-border-color $select-multiple-border-width;
+    border-radius: $select-multiple-border-radius;
+    height: $select-multiple-content-height;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .knight-multiple-search,
+    .knight-tag {
+      margin-top: $select-multiple-search-margin-y;
+      margin-bottom: $select-multiple-search-margin-y;
+    }
+
+    .knight-multiple-search {
+      input {
+        font-size: $select-multiple-search-font-size;
+        width: 100%;
+        border: 0;
+        outline: 0;
+      }
+    }
+
+    &:focus {
+      border-color: $select-multiple-focus-border-color;
+    }
+  }
+}

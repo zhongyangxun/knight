@@ -33,6 +33,7 @@ export const Input: FC<InputProps> = (props) => {
     icon,
     prepend,
     append,
+    className,
     ...restProps
   } = props
 
@@ -40,7 +41,7 @@ export const Input: FC<InputProps> = (props) => {
     window.console.warn(`Input Component: "append" prop will erase "icon" prop, when they exist at the same time.`);
   }
 
-  const wrapperClasses = classNames('knight-input-wrapper', {
+  const wrapperClasses = classNames('knight-input-wrapper', className, {
     'has-icon': icon && !append,
     'has-prepend': !!prepend,
     'has-append': !!append,

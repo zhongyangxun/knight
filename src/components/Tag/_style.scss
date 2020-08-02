@@ -1,0 +1,17 @@
+.knight-tag {
+  display: inline-flex;
+  align-items: center;
+  border: $border-width solid;
+  font-size: $tag-font-size;
+  padding: $tag-padding-y $tag-padding-x;
+  margin-right: $tag-margin-x;
+
+  &.default {
+    @include tag-style($gray-200, $border-color, $gray-700, $gray-200);
+  }
+
+  .icon-wrapper {
+    cursor: pointer;
+    padding: $tag-icon-padding-y $tag-icon-padding-x;
+  }
+}
