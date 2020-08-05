@@ -13,14 +13,17 @@ import { OptionProps } from './option'
 import Input from '../Input/input'
 import Transition from '../Transition/transition'
 import Tag from'../Tag/tag'
+import useClickOutside from '../../hooks/useClickOutside'
+import useDidUpdateEffect from '../../hooks/useDidUpdateEffect'
 
 export interface SelectProps {
   isOpen?: boolean;
   placeholder?: string;
   defaultValue?: string;
-  onChange?: (value: string | string[]) => void;
   disabled?: boolean;
   multiple?: boolean;
+  onChange?: (value: string | string[]) => void;
+  onDropdownVisibleChange?: (isOpen: boolean) => void
 }
 
 interface SelectedData {
@@ -34,26 +37,37 @@ export const Select: FC<SelectProps> = (props) => {
     placeholder,
     isOpen,
     defaultValue,
-    onChange,
     disabled,
     multiple,
+    onChange,
+    onDropdownVisibleChange,
   } =  props
 
-  const [isOptionOpen, setOptionOpen] = useState(isOpen)
+  const [optionOpen, setOptionOpen] = useState(isOpen)
   const [selectedData, setSelectedData] = useState<SelectedData>({value: '', optionText: '',})
   const [multipleSelectedList, setMultipleSelectedList] = useState<SelectedData[]>([])
   const multipleSearchRef = useRef<HTMLInputElement>(null)
   const [multipleSearchValue, setMultipleSearchValue] = useState('')
+  const componentRef = useRef<HTMLDivElement>(null)
+
+  useClickOutside(componentRef, () => {
+    setOptionOpen(false)
+  })
 
   const toggleOptionOpen = () => {
-    setOptionOpen(!isOptionOpen)
+    setOptionOpen(!optionOpen)
   }
 
   useEffect(() => {
-    if (multiple && isOptionOpen && multipleSearchRef.current) {
+    if (multiple && optionOpen && multipleSearchRef.current) {
       multipleSearchRef.current.focus()
     }
-  }, [isOptionOpen, multiple])
+  }, [optionOpen, multiple])
+
+  useDidUpdateEffect(() => {
+    const isOpen = optionOpen as boolean
+    onDropdownVisibleChange && onDropdownVisibleChange(isOpen)
+  }, [optionOpen])
 
   useEffect(() => {
     React.Children.forEach(children, (child) => {
@@ -86,7 +100,7 @@ export const Select: FC<SelectProps> = (props) => {
         newSelectedList = [...multipleSelectedList, selected]
       }
       setMultipleSelectedList(newSelectedList)
-      if (isOptionOpen && multipleSearchRef.current) {
+      if (optionOpen && multipleSearchRef.current) {
         multipleSearchRef.current.focus()
       }
       setMultipleSearchValue('')
@@ -142,12 +156,12 @@ export const Select: FC<SelectProps> = (props) => {
   }
 
   const classes = classNames('knight-select', {
-    'is-option-open': isOptionOpen,
+    'is-option-open': optionOpen,
     'is-disabled': disabled,
   })
 
   return (
-    <div className={classes}>
+    <div className={classes} ref={componentRef} >
       <div className="knight-select-input" onClick={toggleOptionOpen} >
         {
           multiple
@@ -192,7 +206,7 @@ export const Select: FC<SelectProps> = (props) => {
         }
       </div>
       <Transition
-        in={isOptionOpen}
+        in={optionOpen}
         animation="zoom-in-top"
         timeout={300}
       >
