@@ -150,7 +150,7 @@ export const Select: FC<SelectProps> = (props) => {
     }
   }
 
-  const handleTagClose = (e: MouseEvent<SVGSVGElement, MouseEvent>, value: string, optionText: string) => {
+  const handleTagClose = (e: MouseEvent, value: string, optionText: string) => {
     e.stopPropagation()
     handleSelect(value, optionText)
   }

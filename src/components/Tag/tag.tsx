@@ -4,7 +4,7 @@ import Icon from '../Icon/icon'
 
 export interface TagProps {
   closable?: boolean;
-  onClose?: (e: MouseEvent<SVGSVGElement, MouseEvent>) => void;
+  onClose?: (e: MouseEvent) => void;
   children: ReactText;
 }
 
@@ -17,9 +17,9 @@ export const Tag: FC<TagProps> = (props) => {
 
   const [tagShow, setTagShow] = useState(true)
 
-  const handleClose = (e: MouseEvent<SVGSVGElement, MouseEvent>) => {
+  const handleClose = (event: MouseEvent) => {
     setTagShow(false)
-    onClose && onClose(e)
+    onClose && onClose(event)
   }
 
   const classes = classNames('knight-tag', 'default', {
@@ -33,8 +33,8 @@ export const Tag: FC<TagProps> = (props) => {
               {children}
             {
               closable && (
-                <div className="icon-wrapper">
-                  <Icon icon="times" onClick={handleClose} size="sm" theme="dark" />
+                <div className="icon-wrapper" onClick={handleClose}>
+                  <Icon icon="times"  size="sm" theme="dark" />
                 </div>
               )
             }
