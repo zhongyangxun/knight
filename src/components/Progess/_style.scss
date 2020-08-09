@@ -1,0 +1,30 @@
+.knight-progress {
+  .knight-progress-outer {
+    background: $progress-outer-bg;
+    font-size: $progress-font-size;
+    line-height: $progress-line-height;
+
+    &,
+    .knight-progress-inner {
+      border-radius: $progress-border-radius;
+      height: 100%;
+    }
+
+    .knight-progress-inner {
+      color: $white;
+      text-align: right;
+      padding-left: $progress-inner-padding-x;
+      padding-right: $progress-inner-padding-x;
+
+      @each $key, $val in $theme-colors {
+        &.color-#{$key} {
+          background: $val;
+        }
+      }
+
+      .inner-text {
+        color: $progress-text-color;
+      }
+    }
+  }
+}

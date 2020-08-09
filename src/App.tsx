@@ -1,97 +1,17 @@
-import React, { useState } from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import Menu from './components/Menu/menu'
-import MenuItem from './components/Menu/menuItem'
-import Submenu from './components/Menu/subMenu'
-import Transition from './components/Transition/transition'
-import Button from './components/Button/button'
-import Alert from './components/Alert/alert'
-import Input from './components/Input/input'
+import React from 'react';
+import Upload from './components/Upload/upload'
 
-library.add(fas)
 const App: React.FC = () => {
-  const [show, setShow] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header" style={{margin: '100px'}}>
-        <div>
-          <Input placeholder="input" />
-        </div>
-        <div>
-          <Input size="sm" placeholder="small size" icon="search" />
-        </div>
-        <div>
-          <Input size="lg" placeholder="large size" icon="search" />
-        </div>
-        <div>
-          <Input  disabled/>
-        </div>
-        <div>
-          <Input prepend="https" />
-          <Input append=".com" />
-          <Input append=".com" prepend="https" icon="search-dollar" />
-        </div>
-        <div>
-          <Input icon="search" />
-        </div>
-        <Menu defaultIndex='0' onSelect={(index) => { alert(index) }}>
-          <MenuItem>
-            cool link
-          </MenuItem>
-          <MenuItem disabled>
-            cool link 2
-          </MenuItem>
-          <Submenu title="dropdown">
-            <MenuItem>
-              dropdown 1
-            </MenuItem>
-            <MenuItem>
-              dropdown 2
-            </MenuItem>
-          </Submenu>
-          <MenuItem>
-            cool link 3
-          </MenuItem>
-        </Menu>
-        <Button size="lg" onClick={() => { setShow(!show) }} > Toggle </Button>
-        <Transition
-          in={show}
-          timeout={300}
-          animation="zoom-in-left"
-        >
-          <div>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          </div>
-        </Transition>
-        <Transition
-          in={show}
-          timeout={300}
-          animation="zoom-in-top"
-          wrapper
-        >
-          <Button btnType="primary" size="lg">A Large Button </Button>
-        </Transition>
-        <Alert message="do you like your life" closable onClose={() => { console.log('xxx') }} />
-        <Alert message="do you like your life" closable alertType="success" />
-        <Alert message="do you like your life" closable alertType="danger" />
-      </header>
+    <div className="App" style={{
+      margin: '200px 500px'
+    }}>
+      <Upload
+        action="https://jsonplaceholder.typicode.com/posts/"
+      />
     </div>
-  );
+  )
 }
 
 export default App;

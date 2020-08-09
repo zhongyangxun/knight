@@ -1,0 +1,71 @@
+.knight-upload-list {
+  .knight-upload-list-item {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: $upload-item-margin-x;
+    transition: background .25s ease-in-out;
+    border-radius: $upload-item-border-radius;
+
+    .file-name {
+      margin-left: $upload-item-margin-x;
+
+      .knight-icon {
+        margin-right: $upload-item-margin-x;
+      }
+
+      &.file-name-error {
+        color: $danger;
+      };
+    }
+
+    .file-actions {
+      display: none;
+      cursor: pointer;
+    }
+
+    .file-status,
+    .file-actions {
+      width: $upload-item-icon-wrapper-width;
+      text-align: center;
+      margin-right: $upload-item-margin-x;
+    }
+
+    .file-progress {
+      width: 100%;
+    }
+
+    &:hover {
+      background: $upload-item-hover-bg;
+
+      .file-status {
+        display: none;
+      }
+
+      .file-actions {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.knight-upload-dragger {
+  background: $gray-100;
+  border: 1px dashed $gray-300;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  width: 360px;
+  height: 180px;
+  text-align: center;
+
+  &:hover {
+    border: 1px dashed $primary;
+  }
+
+  &.is-drag-over {
+    border: 2px dashed $primary;
+    background: rgba($primary, .2);
+  }
+}

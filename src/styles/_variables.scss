@@ -382,3 +382,19 @@ $tag-margin-x:                       .5rem !default;
 $tag-icon-padding-y:                 0 !default;
 $tag-icon-padding-x:                 .25rem !default;
 $tag-font-size:                      $font-size-sm !default;
+
+// upload
+$upload-item-padding-y:              0 !default;
+$upload-item-padding-x:              .5rem !default;
+$upload-item-border-radius:          $border-radius !default;
+$upload-item-margin-x:               .25rem !default;
+$upload-item-hover-bg:               $gray-200 !default;
+$upload-item-icon-wrapper-width:     1rem !default;
+
+// progress
+$progress-border-radius:             $border-radius-sm !default;
+$progress-text-color:                $white !default;
+$progress-font-size:                 $font-size-sm !default;
+$progress-line-height:               $line-height-sm !default;
+$progress-outer-bg:                  $gray-200 !default;
+$progress-inner-padding-x:           .25rem !default;
