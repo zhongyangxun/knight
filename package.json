@@ -1,7 +1,26 @@
 {
   "name": "knight",
   "version": "0.1.0",
-  "private": true,
+  "description": "React components library",
+  "author": "zhongyangxun",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "type": "dist/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
+  ],
+  "homepage": "https://github.com/zhongyangxun/knight",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhongyangxun/knight"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
@@ -24,15 +43,20 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.4.1",
+    "rimraf": "^3.0.2",
     "typescript": "^3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

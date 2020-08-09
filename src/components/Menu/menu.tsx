@@ -33,7 +33,7 @@ export const MenuContext = createContext<IMenuContext>({
  * 菜单组件，支持下拉菜单，并支持横纵两种模式
  * ## 引入方式
  * ~~~js
- * import { Menu, MenuItem, Submenu } from 'knight'
+ * import { Menu } from 'knight'
  * ~~~
  */
 export const Menu: FC<MenuProps> = (props) => {
