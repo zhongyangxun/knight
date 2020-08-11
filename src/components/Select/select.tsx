@@ -17,12 +17,19 @@ import useClickOutside from '../../hooks/useClickOutside'
 import useDidUpdateEffect from '../../hooks/useDidUpdateEffect'
 
 export interface SelectProps {
+  /** 是否默认展开下拉选项 */
   isOpen?: boolean;
+  /** Select 提示文字 */
   placeholder?: string;
+  /** 默认选中的值 */
   defaultValue?: string;
+  /** 设置是否禁用组件 */
   disabled?: boolean;
+  /** 设置是否多选  */
   multiple?: boolean;
+  /** 选中选项的回调函数 */
   onChange?: (value: string | string[]) => void;
+  /** 下拉选项展开关闭的回调函数 */
   onDropdownVisibleChange?: (isOpen: boolean) => void
 }
 
@@ -31,6 +38,15 @@ interface SelectedData {
   optionText: string;
 }
 
+/**
+ * Select 组件，支持单选与多选
+ * ### 引入方式
+ * ~~~js
+ * import { Select } from '@zhongyangxun/knight'
+ *
+ * const { Option } = Select
+ * ~~~
+ */
 export const Select: FC<SelectProps> = (props) => {
   const {
     children,

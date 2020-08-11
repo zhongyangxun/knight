@@ -5,17 +5,17 @@ import { action } from '@storybook/addon-actions'
 import Alert from './alert'
 
 const defaultAlert = () => (
-  <>
+  <div>
     <Alert message="this is alert!" closable onClose={action('closed')} />
-  </>
+  </div>
 )
 
 const alertWithStyle = () => (
-  <>
+  <div>
     <Alert alertType="success" message="this is Success" closable />
     <Alert alertType="warning" message="this is Warning" />
     <Alert alertType="danger" message="this is Danger" closable />
-  </>
+  </div>
 )
 
 const alertWithDescription = () => (

@@ -16,18 +16,18 @@ const inputWithIcon = () => (
 )
 
 const differenetSizeInput = () => (
-  <>
+  <div>
     <Input placeholder="Small Input" size="sm" />
     <Input placeholder="Middle Input" />
     <Input placeholder="Large Input" size="lg" />
-  </>
+  </div>
 )
 
 const inputWithPrependAndAppend = () => (
-  <>
+  <div>
     <Input prepend="https" />
     <Input append=".com" />
-  </>
+  </div>
 )
 
 storiesOf('Input Component', module)

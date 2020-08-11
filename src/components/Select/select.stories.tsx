@@ -5,19 +5,19 @@ import Select from './select'
 import Option from './option'
 
 const defaultSelect = () => (
-  <>
-  <Select
-    placeholder="请选择用户"
-    onChange={action('selected')}
-    onDropdownVisibleChange={action('dropdown visible change')}
-  >
-    <Option value="jack" >Jack</Option>
-    <Option value="tom" >Tom</Option>
-    <Option value="franklin">Franklin</Option>
-    <Option value="frank">Frank</Option>
-    <Option disabled value="bob">Bob</Option>
-  </Select>
-  </>
+  <div>
+    <Select
+      placeholder="请选择用户"
+      onChange={action('selected')}
+      onDropdownVisibleChange={action('dropdown visible change')}
+    >
+      <Option value="jack" >Jack</Option>
+      <Option value="tom" >Tom</Option>
+      <Option value="franklin">Franklin</Option>
+      <Option value="frank">Frank</Option>
+      <Option disabled value="bob">Bob</Option>
+    </Select>
+  </div>
 )
 
 const renderMultipleOptions = () => {

@@ -31,10 +31,9 @@ export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
 
 /**
  * 输入自动完成组件，支持自定义下拉选项，以及异步请求下拉选项，切支持键盘操作
- *
- * ## 引入方式
+ * ### 引入方式
  * ~~~javascript
- * import { AutoComplete } from 'knight'
+ * import { AutoComplete } from '@zhongyangxun/knight'
  * ~~~
  */
 export const AutoComplete: FC<AutoCompleteProps> = (props) => {

@@ -21,9 +21,9 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
 /**
  * 输入框组件
  *
- * ## 引入方式
+ * ### 引入方式
  * ~~~js
- * import { Input } from 'knight'
+ * import { Input } from '@zhongyangxun/knight'
  * ~~~
  */
 export const Input: FC<InputProps> = (props) => {

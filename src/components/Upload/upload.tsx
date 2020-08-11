@@ -52,9 +52,9 @@ export interface UploadProps {
 /**
  * 文件上传组件，支持拖拽上传文件
  *
- * ## 引入方式
+ * ### 引入方式
  * ~~~javascript
- * import { Upload } from 'knight'
+ * import { Upload } from '@zhongyangxun/knight'
  * ~~~
  */
 

@@ -1,44 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# @zhongyangxun/knight
 
-## Available Scripts
+基于 TypeScript 打造的 React 组件库。
 
-In the project directory, you can run:
+## 安装
 
-### `npm start`
+```shell
+npm install @zhongyangxun/knight
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+or 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```shell
+yarn add @zhongyangxun/knight
+```
 
-### `npm test`
+## 使用方式和文档
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 使用方式
 
-### `npm run build`
+```react
+// 加载样式
+import '@zhongyangxun/knight/dist/index.css'
+// 引入组件
+import { Button } from '@zhongyangxun/knight'
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const App = () => (
+  <Button>
+    Hello
+  </Button>
+)
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### 文档
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+更详细的内容请访问[文档](https://zhongyangxun.github.io/knight/). 
 
-### `npm run eject`
+## 本地开发
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+$ git clone https://github.com/zhongyangxun/knight.git
+$ cd knight
+$ npm install
+$ npm run storybook
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+浏览器访问 http://localhost:9009/.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

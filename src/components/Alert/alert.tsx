@@ -24,9 +24,9 @@ export type AlertProps = BaseAlertProps & Partial<NativeBaseProps>
 
 /**
  * 一个提示框组件
- * ## 引入方式
+ * ### 引入方式
  * ~~~js
- *  import { Alert } from 'knight'
+ *  import { Alert } from '@zhongyangxun/knight'
  * ~~~
  */
 export const Alert: FC<AlertProps> = (props) => {

@@ -28,9 +28,9 @@ export const TabsContext = createContext<ITabsContext>({
 
 /**
  * 选项卡组件
- * ## 引入方式
+ * ### 引入方式
  * ~~~javascript
- * import { Tabs } from 'knight'
+ * import { Tabs } from '@zhongyangxun/knight'
  *
  * const { TabItem } = Tabs
  * ~~~

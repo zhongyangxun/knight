@@ -27,9 +27,9 @@ export interface IconProps extends FontAwesomeIconProps {
  *
  * 支持 font-awesome 所有免费的 solid 图标, 可在 [这里](https://fontawesome.com/icons?d=gallery&s=solid&m=free) 查询
  *
- * ## 引入方式
+ * ### 引入方式
  * ~~~js
- * import { Icon } from 'knight'
+ * import { Icon } from '@zhongyangxun/knight'
  * ~~~
  */
 export const Icon: FC<IconProps> = (props) => {

@@ -21,9 +21,9 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 /**
  * 一个按钮组件
- * ## 引入方式
+ * ### 引入方式
  * ~~~js
- * import { Button } from 'knight'
+ * import { Button } from '@zhongyangxun/knight'
  * ~~~
  */
 
