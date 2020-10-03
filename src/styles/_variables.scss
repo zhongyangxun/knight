@@ -398,3 +398,9 @@ $progress-font-size:                 $font-size-sm !default;
 $progress-line-height:               $line-height-sm !default;
 $progress-outer-bg:                  $gray-200 !default;
 $progress-inner-padding-x:           .25rem !default;
+
+// message
+$message-padding-x:                  1.5rem !default;
+$message-padding-y:                  .75rem !default;
+$message-margin-y:                   .75rem !default;
+$message-icon-margin-x:              $spacer / 2 !default;

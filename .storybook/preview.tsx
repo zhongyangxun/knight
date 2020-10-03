@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '../src/styles/index.scss'
 import './fix_info_style.scss'
+import './storybook.scss'
 
 library.add(fas)
 const wrapperStyle: React.CSSProperties = {

@@ -1,0 +1,29 @@
+.message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1050;
+
+    &,
+    .message {
+      pointer-events: none;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: $message-margin-y;
+      margin-bottom: $message-margin-y;
+
+      .message-content {
+        display: inline-flex;
+        background: $white;
+        box-shadow: $box-shadow;
+        padding: $message-padding-y $message-padding-x;
+
+        .icon {
+          margin-right: $message-icon-margin-x;
+        }
+      }
+    }
+}

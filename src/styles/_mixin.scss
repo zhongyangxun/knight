@@ -108,3 +108,30 @@
     border-color: $hover-border;
   }
 }
+
+@mixin slide-animation(
+  $direction: 'top',
+  $translateStartY: -100%,
+  $translateStartX: 0
+) {
+  .slide-in-#{$direction}-enter {
+    opacity: 0;
+    transform: translate($translateStartX, $translateStartY);
+  }
+
+  .slide-in-#{$direction}-enter-active {
+    opacity: 1;
+    transform: translate(0);
+    transition: transform 200ms ease-out, opacity 200ms ease-in-out;
+  }
+
+  .slide-in-#{$direction}-exit {
+    opacity: 1;
+  }
+
+  .slide-in-#{$direction}-exit-active {
+    opacity: 0;
+    transform: translate($translateStartX, $translateStartY);
+    transition: transform 300ms linear 100ms, opacity 300ms ease-in-out;
+  }
+}
